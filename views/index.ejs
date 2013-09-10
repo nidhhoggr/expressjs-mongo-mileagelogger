@@ -1,0 +1,15 @@
+<% layout('layout') -%>
+    <h1><%= title %></h1>
+    <% trips.forEach( function( trip ) { %>
+        <p class="record_list">
+
+          <span><%= trip.summary %></span>
+          <span>
+            <a href="/trip/edit/<%= trip._id %>" title="Edit this trip"><%= trip.name %></a>
+          </span>
+          <span>
+            <a href="/trip/delete<%= trip._id %>" title="Delete this trip">Delete</a>
+          </span>
+   
+        </p>
+    <% }); %>

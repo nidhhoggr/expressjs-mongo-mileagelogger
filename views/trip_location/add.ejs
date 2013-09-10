@@ -1,0 +1,16 @@
+<% layout('../layout') -%>
+    <h1><%= title %></h1>
+    <form action="/trip_location/create" method="post" accept-charset="utf-8">
+        <div class="input">
+          <span>Trip Location Name</span>
+          <input type="text" name="name" value="" />
+        </div>
+        <div class="input">
+          <span>Trip Location Address</span>
+          <textarea name="address" rows="5" cols="20"></textarea>
+        </div>
+        <div class="input">
+          <input type="submit" value="Submit" />
+        </div>
+    </form>
+

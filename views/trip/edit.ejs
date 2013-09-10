@@ -1,0 +1,45 @@
+<% layout('../layout') -%>
+<h1><%= title %></h1>
+<% trips.forEach( function( trip ){ %>
+  <p>
+      <% if( trip._id == current ){ %>
+      <form action="/trip/update/<%= trip._id %>" method="post" accept-charset="utf-8">
+        <div class="input">
+          <span>Trip Name</span> 
+          <input type="text" name="name" value="<%= trip.name %>" />
+        </div>
+        <div class="input">
+          <span>Mileage</span> 
+          <input type="text" name="mileage" value="<%= trip.mileage %>" />
+        </div>
+        <div class="input">
+          <span>Trip Locations</span>
+          <select name="trip_locations" multiple="true">
+            <% for(var n=0; n<trip_locations.length; n++) {%>
+              <option value="<%= trip_locations[n]._id %>"
+            <% trip.trip_locations.forEach(function(trip_location){%>
+               <% if(trip_location == trip_locations[n]._id) { %>
+                 selected="selected"               
+               <% } %>
+            <% }) %>
+               ><%= trip_locations[n].name %></option>
+            <% } %>
+          </select>
+        </div>
+        <div class="input">
+          <span>Trip Summary</span> 
+          <textarea name="summary" rows="5" cols="20"><%= trip.summary %></textarea>
+        </div>
+        <div class="input">
+          <input type="submit" value="Submit" />
+        </div>
+      </form>
+      <span>
+        <a href="/trip/delete/<%= trip._id %>" title="Delete this trip">Delete</a>
+      </span>
+      <span>
+        <a href="/trip/" title="Back to list">View Trips</a>
+      </span> 
+      <% } %>
+  </p>
+<% }); %>

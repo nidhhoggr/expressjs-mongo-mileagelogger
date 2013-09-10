@@ -1,0 +1,27 @@
+<% layout('../layout') -%>
+<h1><%= title %></h1>
+<% trip_locations.forEach( function( trip_location ){ %>
+  <p>
+      <% if( trip_location._id == current ){ %>
+      <form action="/trip_location/update/<%= trip_location._id %>" method="post" accept-charset="utf-8">
+        <div class="input">
+          <span>Trip Location Name</span> 
+          <input type="text" name="name" value="<%= trip_location.name %>" />
+        </div>
+        <div class="input">
+          <span>Trip Location Address</span> 
+          <textarea name="address" rows="5" cols="20"><%= trip_location.address %></textarea>
+        </div>
+        <div class="input">
+          <input type="submit" value="Submit" />
+        </div>
+      </form>
+    <span>
+      <a href="/trip_location/delete/<%= trip_location._id %>" title="Delete this trip_location">Delete</a>
+    </span>
+    <span>
+      <a href="/trip_location/" title="Back to list">View Trip Locations</a>
+    </span> 
+      <% } %>
+  </p>
+<% }); %>

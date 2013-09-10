@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title><%= title %></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel='stylesheet' href='/stylesheets/style.css' />
+<link rel="stylesheet" href="/layout/css/style.css" type="text/css" media="all" />
+<!--[if IE 6]><link rel="stylesheet" href="{{ asset('/layout/css/ie6.css') }}" type="text/css" media="all" /><![endif]-->
+</head>
+<body>
+<div class="shell">
+  <div class="border">
+    <div id="header">
+      <h1 id="logo">mileage<em>Logger</em></h1>
+      <div class="socials right">
+        <ul>
+          <li><a href="#" class="rss">RSS</a></li>
+          <li><a href="#" class="fb">Facebook</a></li>
+          <li class="last"><a href="#" class="twit">Twitter</a></li>
+        </ul>
+      </div>
+      <div class="cl">&nbsp;</div>
+    </div>
+    <div id="navigation">
+      <ul>
+        <li>
+            <a href="/">Home</a>
+        </li>
+        <li>
+            <a href="/trip_location/">Locations</a>
+        </li>
+        <li>
+            <a href="/trip/">Trips</a>
+        </li>
+        <li>
+            <a href="/trip/add">New Trip</a>
+        </li>
+        <li>
+            <a href="/trip_location/add">New Trip Location</a>
+        </li>
+      </ul>
+      <div class="cl">&nbsp;</div>
+    </div>
+    <div id="main">
+      <div id="content" class="left">
+      <%- body %>
+      </div>
+      <div id="sidebar" class="right">
+        <h3>Some Links</h3>
+        <div class="sidebar-nav">
+          <ul>
+            <li>
+              <a href="/trip/add">New Trip</a>
+            </li>
+            <li>
+              <a href="/trip_location/add">New Trip Location</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="cl">&nbsp;</div>
+    </div>
+    <div class="shadow-l"></div>
+    <div class="shadow-r"></div>
+    <div class="shadow-b"></div>
+  </div>
+  <div id="footer">
+    <p class="left">Copyright &copy; 2013, Supraliminal Solutions, LLC, All Rights Reserved</p>
+    <p class="right">Interactive Mileage Logger by <a href="http://supraliminalsolutions.com">Supraliminal Solutions LLC</a></p>
+    <div class="cl"></div>
+  </div>
+</div>
+</body>
+</html>

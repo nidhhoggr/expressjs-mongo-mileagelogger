@@ -1,0 +1,28 @@
+<% layout('../layout') -%>
+    <h1><%= title %></h1>
+    <form action="/trip/create" method="post" accept-charset="utf-8">
+        <div class="input">
+          <span>Trip Name</span>
+          <input type="text" name="name" value="" />
+        </div>
+        <div class="input">
+          <span>Mileage</span>
+          <input type="text" name="mileage" value="" />
+        </div>
+        <div class="input">
+          <span>Trip Locations</span>
+          <select name="trip_locations" multiple="true">
+            <% for(var i=0; i<trip_locations.length; i++) {%>
+              <option value="<%= trip_locations[i]._id %>"><%= trip_locations[i].name %></option>
+            <% } %>
+          </select>
+        </div>
+        <div class="input">
+          <span>Trip Summary</span>
+          <textarea name="summary" rows="5" cols="20"></textarea>
+        </div>
+        <div class="input">
+          <input type="submit" value="Submit" />
+        </div>
+    </form>
+
